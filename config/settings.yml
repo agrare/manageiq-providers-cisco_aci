@@ -1,0 +1,26 @@
+:ems:
+  :ems_cisco_aci:
+    :blacklisted_event_names: []
+    :event_handling:
+      :event_groups:
+:ems_refresh:
+  :cisco_aci:
+    :refresh_interval: 15.minutes
+:http_proxy:
+  :cisco_aci:
+    :host:
+    :password:
+    :port:
+    :user:
+:log:
+  :level_cisco_aci: info
+:workers:
+  :worker_base:
+    :event_catcher:
+      :event_catcher_cisco_aci:
+        :poll: 20.seconds
+    :queue_worker_base:
+      :ems_metrics_collector_worker:
+        :ems_metrics_collector_worker_cisco_aci: {}
+      :ems_refresh_worker:
+        :ems_refresh_worker_cisco_aci: {}
