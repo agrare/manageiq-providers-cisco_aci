@@ -1,14 +1,11 @@
 class ManageIQ::Providers::CiscoAci::Inventory::Parser < ManageIQ::Providers::Inventory::Parser
   def parse
-    vms
+    top_system
   end
 
-  def vms
-    collector.vms.each do |inventory|
-      inventory_object = persister.vms.find_or_build(inventory.id.to_s)
-      inventory_object.name = inventory.name
-      inventory_object.location = inventory.location
-      inventory_object.vendor = inventory.vendor
+  def top_system
+    collector.top_system.each do |top_system|
+      top_system["attributes"]
     end
   end
 end
